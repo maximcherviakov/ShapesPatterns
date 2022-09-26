@@ -9,6 +9,9 @@ public class PrototypePatternDemo {
         System.out.println("Shape : " + clonedShape2.getType());
 
         Shape clonedShape3 = (Shape) ShapeCache.getShape("3");
-        System.out.println("Shape : " + clonedShape3.getType());
+        System.out.println("Shape : " + clonedShape3.getType() + " / " + clonedShape3.hashCode());
+
+        Shape clonedShape4 = (Shape) ShapeCache.getShape("3");
+        System.out.println("Shape : " + clonedShape4.getType() + " / " + clonedShape4.hashCode());
     }
 }

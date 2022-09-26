@@ -4,7 +4,7 @@ public class ShapeCache {
     private static HashMap<String, Shape> shapeMap = new HashMap<String, Shape>();
 
     public static Shape getShape(String id) {
-        return shapeMap.get(id);
+        return (Shape) shapeMap.get(id).clone();
     }
 
     public static void loadCache() {

@@ -14,7 +14,7 @@ public abstract class Shape implements Cloneable {
         this.id = id;
     }
 
-    protected Object clone() throws CloneNotSupportedException {
+    protected Object clone() {
         Object clone = null;
 
         try {
