@@ -1,0 +1,57 @@
+@startuml
+
+package shapes <<Rectangle>> {
+    abstract class Shape {
+        - String id
+        + String type
+        + void draw()
+        + String getType()
+        + String getId()
+        + void setId()
+        + Object clone()
+    }
+
+    class Circle {
+        + Circle()
+        + draw()
+    }
+
+    class Rectangle {
+        + Rectangle()
+        + draw()
+    }
+
+    class Square {
+        + Square()
+        + draw()
+    }
+}
+
+class ShapeCache {
+    - HashMap shapeMap
+    + Shape getShape()
+    + void loadCache()
+}
+
+class ShapeMaker {
+    - Shape circle
+    - Shape rectangle
+    - Shape square
+    + ShapeMaker()
+    + void drawCircle()
+    + void drawRectangle()
+    + void drawSquare()
+}
+
+class FacadePatternDemo {
+    + void main()
+}
+
+Shape <|--down- Circle : extends
+Shape <|--down- Rectangle : extends
+Shape <|--down- Square : extends
+ShapeCache -right-> shapes : clones
+ShapeMaker -right-> ShapeCache : uses
+FacadePatternDemo -down-> ShapeMaker : uses
+
+@enduml

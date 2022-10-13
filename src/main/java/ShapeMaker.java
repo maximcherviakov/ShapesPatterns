@@ -4,18 +4,22 @@ public class ShapeMaker {
     private Shape square;
 
     public ShapeMaker() {
-        circle = new Circle();
-        rectangle = new Rectangle();
-        square = new Square();
+        ShapeCache.loadCache();
+
+        circle = ShapeCache.getShape("1");
+        rectangle = ShapeCache.getShape("2");
+        square = ShapeCache.getShape("3");
     }
 
-    public void drawCircle(){
+    public void drawCircle() {
         circle.draw();
     }
-    public void drawRectangle(){
+
+    public void drawRectangle() {
         rectangle.draw();
     }
-    public void drawSquare(){
+
+    public void drawSquare() {
         square.draw();
     }
 }
